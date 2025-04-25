@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia Game</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Trivia Game</h1>
+    </div>
+
+    <div class="container">
+
+        <!-- Part 1: Multiple Choice -->
+        <div class="section">
+            <h2>Part 1: Multiple Choice</h2>
+            <hr>
+            <h3>How many students started a computer science degree in 2020?</h3>
+            <button class="answer-button wrong">20,100</button>
+            <button class="answer-button wrong">10,230</button>
+            <button class="answer-button correct">30,090</button>
+            <button class="answer-button wrong">40,070</button>
+            <p id="feedback1"></p>
+        </div>
+
+        <!-- Part 2: Free Response -->
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>Who is credited with having conceived the first automatic digital computer?</h3>
+            <input type="text" id="response">
+            <button id="submit" class="btn">Submit</button>
+            <p id="feedback2"></p>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Handle multiple choice answers
+            const buttons = document.querySelectorAll('.answer-button');
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    if (button.classList.contains('correct')) {
+                        document.querySelector('#feedback1').innerHTML = 'Correct!';
+                        button.style.backgroundColor = 'green';
+                    } else {
+                        document.querySelector('#feedback1').innerHTML = 'Incorrect!';
+                        button.style.backgroundColor = 'red';
+                    }
+                    // Disable buttons after selection
+                    buttons.forEach(b => b.disabled = true);
+                });
+            });
+
+            // Handle free response answer
+            document.querySelector('#submit').addEventListener('click', function() {
+                const response = document.querySelector('#response').value.trim().toLowerCase();
+                const feedback = document.querySelector('#feedback2');
+
+                if (response === "charles babbage") {
+                    feedback.innerHTML = 'Correct!';
+                    feedback.style.color = 'green';
+                } else {
+                    feedback.innerHTML = 'Incorrect!';
+                    feedback.style.color = 'red';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
