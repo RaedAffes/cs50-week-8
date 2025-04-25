@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>CS50 Problem Set Homepage</title>
+</head>
+
+<body>
+    <!-- Jumbotron Section -->
+    <div class="jumbotron">
+        <h1>Welcome to My CS50 Problem Set Homepage</h1>
+    </div>
+
+    <!-- Container for content -->
+    <div class="container">
+        <div class="section">
+            <h2>Problem Set 1: Hello</h2>
+            <p>Introduction to C programming. We worked on understanding basic programming concepts and syntax.</p>
+            <button class="info-btn" onclick="toggleDetails('ps1-details')">More Info</button>
+            <div id="ps1-details" class="details">
+                <p>This problem set focused on writing basic C programs and understanding how C works under the hood.</p>
+            </div>
+            <a href="https://github.com/raedaffes/cs50-problem-set-1" target="_blank">View Repository</a>
+        </div>
+
+        <div class="section">
+            <h2>Problem Set 2: Sudoku Solver</h2>
+            <p>Developed a program to solve a Sudoku puzzle using a backtracking algorithm.</p>
+            <button class="info-btn" onclick="toggleDetails('ps2-details')">More Info</button>
+            <div id="ps2-details" class="details">
+                <p>This problem set involved solving a Sudoku puzzle with a recursive backtracking algorithm.</p>
+            </div>
+            <a href="https://github.com/raedaffes/cs50-problem-set-2" target="_blank">View Repository</a>
+        </div>
+
+        <div class="section">
+            <h2>Problem Set 3: Trivia Game</h2>
+            <p>A web-based trivia game built using HTML, CSS, and JavaScript.</p>
+            <button class="info-btn" onclick="toggleDetails('ps3-details')">More Info</button>
+            <div id="ps3-details" class="details">
+                <p>This problem set focused on creating an interactive trivia game using basic front-end technologies.</p>
+            </div>
+            <a href="https://github.com/raedaffes/cs50-problem-set-3" target="_blank">View Repository</a>
+        </div>
+
+        <div class="section">
+            <h2>Problem Set 4: Memory</h2>
+            <p>Worked on a project involving memory management and the implementation of an application using malloc.</p>
+            <button class="info-btn" onclick="toggleDetails('ps4-details')">More Info</button>
+            <div id="ps4-details" class="details">
+                <p>This problem set explored how memory works and how to allocate it dynamically using the `malloc` function.</p>
+            </div>
+            <a href="https://github.com/raedaffes/cs50-problem-set-4" target="_blank">View Repository</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Raed Affes. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to toggle details -->
+    <script>
+        function toggleDetails(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
